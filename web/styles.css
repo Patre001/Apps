@@ -43,3 +43,67 @@ body { background: #000; color: #111; font-family: system-ui, -apple-system, Seg
 @media (prefers-reduced-motion: reduce) {
   .lottie-layer { display: none; }
 }
+
+/* === Overlay-Panel (mobile: volle Breite; desktop: linke Spalte) === */
+.panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;              /* mobil: volle Breite */
+  max-height: 70svh;         /* mobil: nicht zu hoch */
+  overflow: auto;
+  z-index: 3;                /* über Lottie (.stage hat z-index 0/1) */
+  color: #0a0a0a;
+
+  /* Glassy Box, damit die Animation darunter sichtbar bleibt */
+  background: rgba(255,255,255,0.85);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  border-radius: 16px;
+  margin: env(safe-area-inset-top) 16px 16px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Panel-Inhalte */
+.panel-head {
+  padding: 20px 20px 8px 20px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.panel-head h2 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.panel-head .sub {
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+}
+
+.panel-body {
+  padding: 16px 20px 20px 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.panel .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #10b981;   /* emerald-500 */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Desktop: linke Spalte fix, volle Höhe */
+@media (min-width: 1024px) {
+  .panel {
+    top: 0;
+    bottom: 0;
+    width: 380px;          /* Spaltenbreite */
+    max-height: none;      /* volle Höhe */
+    margin: env(safe-area-inset-top) 0 0 env(safe-area-inset-left);
+    border-radius: 0 16px 16px 0;
+  }
+}
