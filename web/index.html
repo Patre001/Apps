@@ -3,49 +3,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Fullscreen Background + Lottie</title>
+    <title>Load It! – Fullscreen Background + Lottie</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Preload background image -->
     <link rel="preload" href="./assets/Background_Lottie.jpg" as="image" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./styles.css" />
+
+    <meta name="description" content="Load It! is a fast and satisfying puzzle game about mastering the perfect delivery flow." />
   </head>
   <body>
-    <!-- Fullscreen visual layers -->
+    <!-- Visual background (image + lottie) -->
     <div class="stage" aria-hidden="true">
       <img class="bg" src="./assets/Background_Lottie.jpg" alt="" />
       <div id="lottie" class="lottie-layer"></div>
     </div>
 
-    <!-- Optional page content can go here (will sit above the animation) -->
-    <main class="content" role="main" aria-label="Inhalt">
-      <!-- <h1>Dein Inhalt</h1> -->
+    <!-- Content Card -->
+    <main id="main" class="content" role="main" aria-label="Inhalt">
+      <section class="cta-card" aria-labelledby="loadit-title">
+        <div class="cta-inner">
+          <img class="logo" src="./assets/LoadIt_Wortmarke.svg" alt="LOAD IT!" id="loadit-title" />
+          <div class="copy">
+            <p><strong>Load It!</strong> is a fast and satisfying puzzle game about mastering the perfect delivery flow.</p>
+            <p>Turn the line. Change the flow. Load the trucks.</p>
+            <p>Ready when you are – <strong>DownLoad It!</strong></p>
+          </div>
+          <a class="store-link" href="#" target="_blank" rel="noopener">
+            <img src="./assets/appstore_badge.svg" alt="Download on the App Store" />
+          </a>
+        </div>
+      </section>
     </main>
 
-    <!-- Lottie library from CDN -->
+    <!-- Footer with legal links -->
+    <footer class="footer">
+      <nav aria-label="Rechtliches">
+        <a href="#impressum">Impressum</a>
+        <a href="#privacy">Privacy Policy</a>
+      </nav>
+    </footer>
+
+    <!-- Lottie -->
     <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
     <script src="./main.js"></script>
-    <noscript>
-      <style>.stage{display:block}</style>
-    </noscript>
-
-    <div class="panel" role="complementary" aria-label="Info">
-  <header class="panel-head">
-    <h2>Projekt LoadIt</h2>
-    <p class="sub">Kurzer Intro-Text über die Animation / Produkt.</p>
-  </header>
-
-  <div class="panel-body">
-    <p>Hier steht dein Content. Links/spalte auf Desktop,
-       mobil nimmt sie die volle Breite ein.</p>
-
-    <ul>
-      <li>Vorteil A</li>
-      <li>Vorteil B</li>
-      <li>Vorteil C</li>
-    </ul>
-
-    <!-- Beispielbutton -->
-    <a class="btn" href="#mehr">Mehr erfahren</a>
-  </div>
-</div>
-
+    <noscript><style>.stage{display:block}</style></noscript>
   </body>
 </html>
