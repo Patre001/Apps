@@ -99,13 +99,25 @@ body {
 /* ---------- Footer ---------- */
 .footer {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: flex-start;
-  gap: 64px;
+  flex-wrap: wrap;               /* ✅ erlaubt automatisches Umbrechen */
+  align-items: center;
+  justify-content: flex-start;   /* von links ausgerichtet */
+  gap: 32px;                     /* Abstand zwischen den Elementen */
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom)) 16px;
   z-index: 3;
   color: #000;
+  background: transparent;
+  font-size: 14px;
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;               /* Links dürfen ebenfalls umbrechen */
+  gap: 24px;                     /* Abstand zwischen Impressum & Privacy Policy */
 }
 
 .footer a {
@@ -113,7 +125,34 @@ body {
   text-decoration: none;
   opacity: .95;
 }
-.footer a:hover { text-decoration: underline; }
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .copyright {
+  margin: 0;
+  color: #000;
+  opacity: 0.9;
+  white-space: nowrap;           /* bleibt auf Desktop in einer Zeile */
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .footer {
+    gap: 12px;                   /* etwas enger auf kleinen Displays */
+    font-size: 13px;
+  }
+  .footer nav {
+    gap: 16px;
+  }
+  .footer .copyright {
+    white-space: normal;         /* ✅ darf auf Mobile umbrechen */
+  }
+}
+
+
+
 
 /* ---------- Optional: Animation abschalten bei prefers-reduced-motion ----------
 @media (prefers-reduced-motion: reduce) {
