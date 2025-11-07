@@ -1,56 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Load It! – Fullscreen Background + Lottie</title>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patre001 Apps</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f7d794, #f78fb3);
-            color: #2f3640;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            font-size: 1.2rem;
-            margin: 0.3rem 0;
-        }
-        a {
-            color: #2f3640;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 2rem 3rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>👋 Welcome to ptstudio Apps!</h1>
-        <p>Privacy matters! See our <a href="https://patre001.github.io/privacy_policy.md">Privacy Policy</a></p>
-        <p>Enjoy your visit and have fun exploring! 🎮✨</p>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Preload background -->
+    <link rel="preload" href="./assets/Background_Lottie.jpg" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <meta name="description" content="Load It! is a fast and satisfying puzzle game about mastering the perfect delivery flow." />
+  </head>
+  <body>
+    <!-- Background layers -->
+    <div class="stage" aria-hidden="true">
+      <img class="bg" src="./assets/Background_Lottie.jpg" alt="" />
+      <div id="lottie" class="lottie-layer"></div>
     </div>
-    <footer>
-        &copy; 2025 Paul Trettin | Made with passion
+
+    <!-- CTA Card -->
+    <main id="main" class="content" role="main" aria-label="Inhalt">
+      <section class="cta-card" aria-labelledby="loadit-title">
+        <div class="cta-inner">
+          <img class="logo" src="./assets/LoadIt_Wortmarke.svg" alt="LOAD IT!" id="loadit-title" />
+          <div class="copy">
+            <p><strong>Load It!</strong> is a fast and satisfying puzzle game about mastering the perfect delivery flow.</p>
+            <p>Turn the line. Change the flow. Load the trucks.</p>
+            <p>Ready when you are – <br><strong>DownLoad It!</strong></br></p>
+          </div>
+          <div class="actions">
+            <a class="store-link" href="https://apps.apple.com/de/app/load-it/id6748239267" target="_blank" rel="noopener">
+              <img src="./assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <nav aria-label="Rechtliches">
+        <a href="#impressum">Impressum</a>
+        <a href="#privacy">Privacy Policy</a>
+      </nav>
     </footer>
-</body>
+
+    <!-- Lottie -->
+    <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js"></script>
+    <script src="./main.js"></script>
+    <noscript><style>.stage{display:block}</style></noscript>
+  </body>
 </html>
